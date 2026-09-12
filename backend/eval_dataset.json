@@ -1,0 +1,17 @@
+[
+    {
+        "id": "scenario_1",
+        "prompt": "Find top 2 coding laptops under 60000 rupees",
+        "expected_action_sequence": ["search", "extract_links", "process_products", "view_cart", "finish"]
+    },
+    {
+        "id": "scenario_2",
+        "prompt": "Look for a lightweight Macbook for coding",
+        "expected_action_sequence": ["search", "extract_links", "process_products", "view_cart", "finish"]
+    },
+    {
+        "id": "scenario_3",
+        "prompt": "Search for cheap chromebooks under 20000",
+        "expected_action_sequence": ["search", "extract_links", "process_products", "view_cart", "finish"]
+    }
+]

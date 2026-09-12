@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+
+venv/
+.venv/
+
+__pycache__/
+*.pyc
+
+playwright_user_data/
+
+.DS_Store

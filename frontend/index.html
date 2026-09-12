@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Laptop Buying Guide</title>
+    <meta name="description" content="Find and cart the perfect laptop with the help of AI.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blob blob-1"></div>
+    <div class="background-blob blob-2"></div>
+    <div class="background-blob blob-3"></div>
+
+    <div class="app-layout">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar glass-panel">
+            <div class="brand">
+                <i class="ph ph-robot gradient-text" style="font-size: 2rem;"></i>
+                <h2>ShopAgent</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active" data-view="search"><i class="ph ph-magnifying-glass"></i> Search</li>
+                <li data-view="compare"><i class="ph ph-scales"></i> Compare <span id="compareCount" class="badge">0</span></li>
+                <li data-view="watchlist"><i class="ph ph-bell"></i> Watchlist</li>
+                <li data-view="profile"><i class="ph ph-user"></i> Profile</li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content glass-panel">
+            
+            <!-- View: Search -->
+            <section id="view-search" class="view-section active">
+                <header class="view-header">
+                    <h1 class="gradient-text">Find Your Perfect Laptop</h1>
+                    <p class="subtitle">Tell me what you need, I'll search Amazon & Flipkart and help you decide.</p>
+                </header>
+                
+                <div class="chat-area" id="chatArea">
+                    <div class="message ai-message">
+                        <div class="avatar"><i class="ph ph-robot"></i></div>
+                        <div class="message-content">
+                            Hello! I'm your AI shopping agent. <br><br>
+                            Example: <em>"I need a gaming laptop under ₹70,000 with RTX 4050+, 16GB RAM, good for coding and gaming, and preferably under 2.3kg."</em>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-area">
+                    <form id="promptForm">
+                        <input type="text" id="promptInput" placeholder="Describe your requirements..." required autocomplete="off">
+                        <button type="submit" id="submitBtn">
+                            <i class="ph ph-paper-plane-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- View: Compare -->
+            <section id="view-compare" class="view-section hidden">
+                <header class="view-header">
+                    <h1 class="gradient-text">Compare Laptops</h1>
+                    <p class="subtitle">Side-by-side analysis with AI recommendations</p>
+                </header>
+                <div class="compare-content" id="compareContent">
+                    <div class="empty-state">
+                        <i class="ph ph-scales" style="font-size: 4rem; color: var(--text-muted);"></i>
+                        <p>Select products from search results to compare them here.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- View: Watchlist -->
+            <section id="view-watchlist" class="view-section hidden">
+                <header class="view-header">
+                    <h1 class="gradient-text">Price Alerts & Watchlist</h1>
+                    <p class="subtitle">Tracking price drops across multiple stores</p>
+                </header>
+                
+                <!-- Demo Action -->
+                <button id="demoPriceDropBtn" class="action-btn secondary-btn" style="margin: 20px;" title="Demo only — does not reflect real price changes">
+                    <i class="ph ph-magic-wand"></i> Simulate Price Drop <span style="font-size:0.75rem; opacity:0.7;">(Demo)</span>
+                </button>
+                
+                <div class="watchlist-content" id="watchlistContent">
+                    <div class="empty-state">
+                        <i class="ph ph-bell" style="font-size: 4rem; color: var(--text-muted);"></i>
+                        <p>You aren't tracking any products yet.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- View: Profile -->
+            <section id="view-profile" class="view-section hidden">
+                <header class="view-header">
+                    <h1 class="gradient-text">Your Preferences</h1>
+                    <p class="subtitle">I learn what you like to give better recommendations</p>
+                </header>
+                <div class="profile-content" id="profileContent">
+                    <div class="glass-card profile-card">
+                        <h3>Budget Sensitivity</h3>
+                        <p>Medium</p>
+                        <h3>Priorities</h3>
+                        <div class="tags">
+                            <span class="tag">Gaming</span>
+                            <span class="tag">Coding</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- Agent Activity Timeline (Collapsible) -->
+        <aside class="agent-activity glass-panel" id="agentActivity">
+            <div class="activity-header" id="toggleActivityBtn">
+                <h3><i class="ph ph-activity"></i> Agent Activity</h3>
+                <i class="ph ph-caret-down" id="activityToggleIcon"></i>
+            </div>
+            <div class="activity-timeline" id="activityTimeline">
+                <div class="timeline-empty">Waiting for a task...</div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Modals -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

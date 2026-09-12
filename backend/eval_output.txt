@@ -1,0 +1,46 @@
+=======================================
+STARTING EVALS: Laptop Buying Agent
+=======================================
+\n[RUNNING SCENARIO]: scenario_1
+Prompt: 'Find top 2 coding laptops under 60000 rupees'
+✅ PASS: Scenario completed successfully.
+\n[RUNNING SCENARIO]: scenario_2
+Prompt: 'Look for a lightweight Macbook for coding'
+✅ PASS: Scenario completed successfully.
+\n[RUNNING SCENARIO]: scenario_3
+Prompt: 'Search for cheap chromebooks under 20000'
+Error: Locator.click: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("#add-to-cart-button:visible, input[name='submit.addToCart']:visible, input[name='submit.add-to-cart']:visible, button:has-text('Add to Cart'):visible, button:has-text('Add to cart'):visible").first
+    - locator resolved to <button role="button" tabindex="-1" data-modal-ignore="" data-behavior="activate" id="nav-assist-add-to-cart" data-target="#add-to-cart-button" data-nav-assist-menu-item-index="12" aria-label="Add to cart, shift, alt, K" aria-describedby="nav-assist-shortcut-help" class="nav-assistant-menu-item nav-assistant-link-item nav-assistant-keyboard-shortcut-item keyboard-shortcut-menu-container a-color-base a-color-link nav-assistant-link-button" data-actuators="[{"eventKey":"","eventCode":"KeyK","isShiftReq…>…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - element is outside of the viewport
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - element is outside of the viewport
+    - retrying click action
+      - waiting 100ms
+    57 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - element is outside of the viewport
+     - retrying click action
+       - waiting 500ms
+
+✅ PASS: Scenario completed successfully.
+\n=======================================
+EVALUATION REPORT CARD
+=======================================
+Score: 3/3 (100.0%)
+ - scenario_1: PASS
+ - scenario_2: PASS
+ - scenario_3: PASS
